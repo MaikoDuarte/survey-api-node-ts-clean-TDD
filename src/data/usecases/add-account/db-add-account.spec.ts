@@ -50,7 +50,7 @@ describe('DbAddAccount Usecase', () => {
             email: 'valid_email',
             password: 'valid_password'
         }
-       const promise = await sut.add(accountData)
+       const promise = sut.add(accountData)
        await expect(promise).rejects.toThrow()
     })
 
