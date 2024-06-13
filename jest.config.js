@@ -1,13 +1,11 @@
 module.exports = {
-  preset: 'ts-jest/presets/js-with-ts',
-  testEnvironment: "node",
-  globals: {
-      'ts-jest': {
-          tsconfig: '<rootDir>tsconfig.json',
-      },
-  },
-  transformIgnorePatterns: [
-      "node_modules/(?!troublesome-dependency/.*)",
-  ],
-}
+  roots: ['<rootDir>/src'],
+  collectCoverageFrom: ['<rootDir>/src/**/*.ts'],
+  coverageDirectory: 'coverage',
+  testEnvironment: 'node',
+  preset: '@shelf/jest-mongodb',
+  transform: {
+    '.+\\.ts$': 'ts-jest'
+  }
 
+}
